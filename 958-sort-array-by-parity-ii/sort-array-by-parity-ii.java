@@ -1,24 +1,22 @@
 class Solution {
-    public int[] sortArrayByParityII(int[] nums){
-        int even=0;
-        int odd=1;
-        int n=nums.length;
-        while(even<n && odd<n){
-            if(nums[even]%2==0){
-                even+=2;
-            }
-            else if(nums[odd]%2==1){
-                odd+=2;
-            }
-            else{
-                int temp=nums[even];
-                nums[even]=nums[odd];
-                nums[odd]=temp;
-                even+=2;
-                odd+=2;
+    public int[] sortArrayByParityII(int[] A) {
+        
+        int n = A.length;
+        int o = 1, e = 0;
+        while (o < n && e < n){
+            if ((A[o] & 1) == 0){
+                swap(A, o, e);
+                e += 2;
+            } else {
+                o += 2;
             }
         }
-    return nums;
-        
+        return A;
+    }
+    
+    private void swap(int[] a, int l, int r){
+        int t = a[l];
+        a[l]  = a[r];
+        a[r]  = t;
     }
 }
