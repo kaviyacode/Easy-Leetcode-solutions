@@ -1,2 +1,2 @@
 # Easy-Leetcode-solutions
-here My leetcode solutions for Easy problems
+Here My Efficient leetcode solutions for Easy problems
